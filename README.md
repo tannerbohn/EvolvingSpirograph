@@ -1,6 +1,7 @@
 # EvolvingSpirograph
 Generative art based on spirographs
 
+![sample](https://github.com/tannerbohn/EvolvingSpirograph/blob/main/tests/collage.png)
 
 Run `python3 main.py` to generate samples.
 If you look inside `main.py`, you will see that you can ...
