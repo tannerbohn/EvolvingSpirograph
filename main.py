@@ -46,8 +46,11 @@ def draw(final_size, draw_scale, palette, use_noise, seed):
 
 	img_draw = ImageDraw.Draw(img, "RGBA")
 
-	pix_x = draw_size[0]*(path[0][0] + 1)/2
-	pix_y = draw_size[1]*(path[0][1] + 1)/2
+	s = min(draw_size)
+
+	pix_x = draw_size[0]/2 + path[0][0]*s/2
+	pix_y = draw_size[1]/2 + path[0][1]*s/2
+
 	pix_x = int(pix_x)
 	pix_y = int(pix_y)
 	prev_loc = (pix_x, pix_y)
@@ -58,8 +61,9 @@ def draw(final_size, draw_scale, palette, use_noise, seed):
 	for i_p in range(len(path)):
 		if i_p == 0: continue
 
-		pix_x = draw_size[0]*(path[i_p][0] + 1)/2
-		pix_y = draw_size[1]*(path[i_p][1] + 1)/2
+
+		pix_x = draw_size[0]/2 + path[i_p][0]*s/2
+		pix_y = draw_size[1]/2 + path[i_p][1]*s/2
 
 		pix_x = int(pix_x)
 		pix_y = int(pix_y)
@@ -118,7 +122,7 @@ def draw(final_size, draw_scale, palette, use_noise, seed):
 
 final_size = (600, 600) # how large the final square should be
 draw_scale = 5 # probably don't need to touch this
-palete_name = "ink"
+palette_name = "ink"
 
 for seed in range(10):
 
